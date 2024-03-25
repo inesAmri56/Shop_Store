@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop_store/components/text_utils.dart';
 import 'package:shop_store/components/theme.dart';
 
@@ -18,7 +19,7 @@ class AuthButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        primary: mainColor,
+        primary: Get.isDarkMode? mainColor:pinkClr,
         minimumSize: const Size(360, 50),
       ),
       child: TextUtils(

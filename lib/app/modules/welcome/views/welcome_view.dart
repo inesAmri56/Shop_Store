@@ -66,7 +66,7 @@ class WelcomeView extends GetView<WelcomeController> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextUtils(
-                          text: "Shope",
+                          text: "Shop",
                           fontSize: 35,
                           fontWeight: FontWeight.bold,
                           color: mainColor,

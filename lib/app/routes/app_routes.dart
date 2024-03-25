@@ -14,6 +14,7 @@ abstract class Routes {
   static const CATEGORY = _Paths.CATEGORY;
   static const FAVORITES = _Paths.FAVORITES;
   static const SETTINGS = _Paths.SETTINGS;
+  static const FORGET_PASSWORD = _Paths.FORGET_PASSWORD;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const CATEGORY = '/category';
   static const FAVORITES = '/favorites';
   static const SETTINGS = '/settings';
+  static const FORGET_PASSWORD = '/forget-password';
 }

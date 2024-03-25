@@ -8,16 +8,10 @@ class FavoritesView extends GetView<FavoritesController> {
   const FavoritesView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('FavoritesView'),
-        centerTitle: true,
-      ),
-      body: const Center(
-        child: Text(
-          'FavoritesView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+    return Center(
+      child: Text(
+        "home",
+        style: TextStyle(color: Colors.white),
       ),
     );
   }

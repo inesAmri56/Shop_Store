@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:shop_store/components/text_utils.dart';
 import 'package:shop_store/components/theme.dart';
 
@@ -19,7 +21,7 @@ class ContainerUnder extends StatelessWidget {
       width: double.infinity,
       height: 100,
         decoration: BoxDecoration(
-          color: mainColor,
+            color: Get.isDarkMode? mainColor:pinkClr,
           borderRadius: BorderRadius.only(
             //khtr hajti bih men fou9 khaw
             topLeft: Radius.circular(20),
@@ -41,7 +43,7 @@ class ContainerUnder extends StatelessWidget {
                 , fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
-                underline: TextDecoration.none),
+                underline: TextDecoration.underline),
           ),)
         ],
       ),

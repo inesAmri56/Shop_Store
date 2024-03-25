@@ -6,6 +6,13 @@ class SignupController extends GetxController {
 RxString name ="".obs;
 RxString email ="".obs;
 RxString password="".obs;
+bool isVisibility = false;
+bool isCheckbox=false;
+
+
+
+
+
   @override
   void onInit() {
     super.onInit();
@@ -20,5 +27,17 @@ RxString password="".obs;
   void onClose() {
     super.onClose();
   }
+void visibility() {
+  isVisibility = !isVisibility;
+  update();
+}
+void checkBox(){
+    isCheckbox = !isCheckbox;
+    update();
+}
+
+// Méthode pour inverser l'état de la case à cocher
 
 }
+
+
