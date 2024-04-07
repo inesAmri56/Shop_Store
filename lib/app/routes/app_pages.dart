@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/cartScreen/bindings/cart_screen_binding.dart';
+import '../modules/cartScreen/views/cart_screen_view.dart';
 import '../modules/category/bindings/category_binding.dart';
 import '../modules/category/views/category_view.dart';
 import '../modules/favorites/bindings/favorites_binding.dart';
@@ -12,6 +14,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/mainscreen/bindings/mainscreen_binding.dart';
 import '../modules/mainscreen/views/mainscreen_view.dart';
+import '../modules/product/bindings/product_binding.dart';
+import '../modules/product/views/product_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
 import '../modules/settings/views/settings_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
@@ -29,7 +33,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () =>  HomeView(),
+      page: () => HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -39,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.WELCOME,
-      page: () =>  WelcomeView(),
+      page: () => WelcomeView(),
       binding: WelcomeBinding(),
     ),
     GetPage(
@@ -59,18 +63,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.FAVORITES,
-      page: () =>  FavoritesView(),
+      page: () => FavoritesView(),
       binding: FavoritesBinding(),
     ),
     GetPage(
       name: _Paths.SETTINGS,
-      page: () =>  SettingsView(),
+      page: () => SettingsView(),
       binding: SettingsBinding(),
     ),
     GetPage(
       name: _Paths.FORGET_PASSWORD,
-      page: () =>  ForgetPasswordView(),
+      page: () => ForgetPasswordView(),
       binding: ForgetPasswordBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCT,
+      page: () => ProductView(),
+      binding: ProductBinding(),
+    ),
+    GetPage(
+      name: _Paths.CART_SCREEN,
+      page: () => const CartScreenView(),
+      binding: CartScreenBinding(),
     ),
   ];
 }

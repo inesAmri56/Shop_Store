@@ -3,7 +3,9 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_store/app/modules/forget_password/views/forget_password_view.dart';
+import 'package:shop_store/app/modules/home/views/home_view.dart';
 import 'package:shop_store/app/modules/login/controllers/login_controller.dart';
+import 'package:shop_store/app/modules/mainscreen/views/mainscreen_view.dart';
 import 'package:shop_store/app/modules/signup/views/signup_view.dart';
 import 'package:shop_store/components/auth/auth_button.dart';
 import 'package:shop_store/components/auth/auth_text_field.dart';
@@ -118,30 +120,36 @@ class LoginView extends GetView<LoginController> {
 
                         ),
                         const SizedBox(height: 20),
-                        AuthButton(onPressed: () {}, text: "Log In"),
+                        AuthButton(onPressed: () {
+                          Get.off(MainscreenView());
+                        }, text: "Log In"),
+                        SizedBox(height: 30,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            InkWell(
+                              onTap: (){},
+                              child: Image.asset("assets/images/facebook.png"),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            InkWell(
+                              onTap: (){},
+                              child: Image.asset("assets/images/google.png"),
+                            ),
+
+                          ],
+                        ),
                       ],
+
                     ),
+
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    onTap: (){},
-                    child: Image.asset("assets/images/facebook.png"),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  InkWell(
-                    onTap: (){},
-                    child: Image.asset("assets/images/google.png"),
-                  ),
 
-                ],
-              ),
+
               Center(
                 child: ContainerUnder(
                   text: "Don't have an Account?",

@@ -8,7 +8,7 @@ class Assets {
   static const String imagesEmail = 'assets/images/email.png';
   static const String imagesEmptyProile = 'assets/images/empty_proile.png';
   static const String imagesFacebook = 'assets/images/facebook.png';
-  static const String imagesForgetpass copy = 'assets/images/forgetpass copy.png';
+  static const String imagesForgetpass  = 'assets/images/forgetpass copy.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesHeart = 'assets/images/heart.png';
   static const String imagesHoody = 'assets/images/hoody.jpg';

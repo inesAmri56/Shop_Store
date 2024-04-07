@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop_store/app/routes/app_pages.dart';
 import 'package:shop_store/components/theme.dart';
 
 import '../controllers/mainscreen_controller.dart';
@@ -20,7 +21,7 @@ class MainscreenView extends GetView<MainscreenController> {
             actions: [
               IconButton(
                 onPressed: () {
-
+                   Get.toNamed(Routes.CART_SCREEN);
                 },
                 icon: Image.asset('assets/images/shop.png'),
               ),

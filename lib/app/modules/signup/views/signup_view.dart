@@ -118,7 +118,7 @@ class SignupView extends GetView<SignupController> {
                         CheckWidget(),
                         SizedBox(height: 50),
                         AuthButton(onPressed: () {
-                          Get.to(MainscreenView());
+                          Get.to(LoginView());
                         }, text: "Sign Up"),
                       ],
                     ),
