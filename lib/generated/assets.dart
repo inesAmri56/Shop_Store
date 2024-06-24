@@ -2,13 +2,16 @@
 class Assets {
   Assets._();
 
+  static const String animationAnimation  1718981793756 = 'assets/animation/Animation - 1718981793756.json';
+  static const String animationAnimation  1718983793209 = 'assets/animation/Animation - 1718983793209.json';
   static const String imagesBackground = 'assets/images/background.png';
   static const String imagesCheck = 'assets/images/check.png';
   static const String imagesCredit = 'assets/images/credit.png';
   static const String imagesEmail = 'assets/images/email.png';
   static const String imagesEmptyProile = 'assets/images/empty_proile.png';
+  static const String imagesExamp = 'assets/images/examp.jpg';
   static const String imagesFacebook = 'assets/images/facebook.png';
-  static const String imagesForgetpass  = 'assets/images/forgetpass copy.png';
+  static const String imagesForgetpass copy = 'assets/images/forgetpass copy.png';
   static const String imagesGoogle = 'assets/images/google.png';
   static const String imagesHeart = 'assets/images/heart.png';
   static const String imagesHoody = 'assets/images/hoody.jpg';

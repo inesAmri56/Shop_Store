@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 import 'package:shop_store/app/modules/login/views/login_view.dart';
 import 'package:shop_store/app/modules/signup/views/signup_view.dart';
 import 'package:shop_store/components/text_utils.dart';
@@ -16,12 +17,21 @@ class WelcomeView extends GetView<WelcomeController> {
       child: Scaffold(
         body: Stack(
           children: [
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
-              child: Image.asset(
-                'assets/images/background.png',
-                fit: BoxFit.cover,
+            Padding(
+            padding: EdgeInsets.only(top: 60),
+              child: SizedBox(
+                // width: double.infinity,
+                // height: double.infinity,
+                 child: Lottie.asset('assets/animation/Animation - 1718983793209.json',
+                   height: 250,
+                   width: 300,
+                   repeat: true,
+                   reverse: true,
+                   fit: BoxFit.cover,
+                 )            // Image.asset(
+                //   'assets/images/background.png',
+                //   fit: BoxFit.cover,
+                // ),
               ),
             ),
             Container(
@@ -38,28 +48,29 @@ class WelcomeView extends GetView<WelcomeController> {
                     height: 60,
                     width: 190,
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
+                      //color: Colors.black.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Center(
                       child: TextUtils(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
-                        text: "Welcome",
+                        text: "Welcome Our",
                         color: Colors.white,
                         underline: TextDecoration.none,
 
                       ),
+
+
                     ),
+
                   ),
-                  const SizedBox(
-                    height: 100,
-                  ),
+
                   Container(
                     height: 60,
                     width: 230,
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
+                     // color: Colors.black.withOpacity(0.3),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: const Row(

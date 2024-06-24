@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+
 
   RxString email ="".obs;
   RxString password="".obs;

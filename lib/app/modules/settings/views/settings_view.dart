@@ -14,7 +14,7 @@ class SettingsView extends GetView<SettingsController> {
 mainAxisAlignment: MainAxisAlignment.center,     children: [
             TextButton(
               onPressed: (){
-                ThemeController().changesThemeMode();
+                //ThemeController().changesThemeMode();
 
               },
               child: Text(

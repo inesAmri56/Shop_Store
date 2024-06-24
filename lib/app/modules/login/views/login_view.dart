@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,10 +25,12 @@ class LoginView extends GetView<LoginController> {
       child: Scaffold(
 
         appBar: AppBar(
-          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          // backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          backgroundColor:Colors.white,
           elevation: 0,
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+        backgroundColor: Colors.white,
+        // backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -48,7 +49,8 @@ class LoginView extends GetView<LoginController> {
                               text: 'LOG',
                               fontSize: 28,
                               fontWeight: FontWeight.w500,
-                              color: Get.isDarkMode ? mainColor : pinkClr,
+                              color: mainColor,
+                              // Get.isDarkMode ? mainColor : pinkClr,
                               underline: TextDecoration.none,
                             ),
                             SizedBox(width: 3),
@@ -56,7 +58,8 @@ class LoginView extends GetView<LoginController> {
                               text: 'IN',
                               fontSize: 28,
                               fontWeight: FontWeight.w500,
-                              color: Get.isDarkMode ? Colors.black : Colors.white,
+                              color: Colors.black,
+                              //Get.isDarkMode ? Colors.black : Colors.white,
                               underline: TextDecoration.none,
                             ),
                           ],
@@ -74,7 +77,7 @@ class LoginView extends GetView<LoginController> {
                           },
                           prefixIcon: Get.isDarkMode
                               ? Image.asset('assets/images/email.png')
-                              : Icon(Icons.email, color: pinkClr, size: 30),
+                              : Icon(Icons.email, color: mainColor, size: 30),
                           suffixIcon: Text(""),
                           hintText: "Email",
                         ),
@@ -90,7 +93,7 @@ class LoginView extends GetView<LoginController> {
                             },
                             prefixIcon: Get.isDarkMode
                                 ? Image.asset('assets/images/lock.png')
-                                : Icon(Icons.lock, color: pinkClr, size: 30),
+                                : Icon(Icons.lock, color: mainColor, size: 30),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 controller.visibility();
@@ -112,7 +115,8 @@ class LoginView extends GetView<LoginController> {
                               },
                               child: TextUtils(text: "Forgot Password?", fontSize: 14,
                                   fontWeight: FontWeight.normal,
-                                  color:Get.isDarkMode?Colors.black: Colors.white,
+                                  color:Colors.black,
+                                  //Get.isDarkMode?Colors.black: Colors.white,
                                   underline: TextDecoration.none),
                             ),
                           );

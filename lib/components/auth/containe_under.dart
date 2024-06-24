@@ -21,7 +21,8 @@ class ContainerUnder extends StatelessWidget {
       width: double.infinity,
       height: 100,
         decoration: BoxDecoration(
-            color: Get.isDarkMode? mainColor:pinkClr,
+            color: mainColor,
+            //Get.isDarkMode? mainColor:pinkClr,
           borderRadius: BorderRadius.only(
             //khtr hajti bih men fou9 khaw
             topLeft: Radius.circular(20),

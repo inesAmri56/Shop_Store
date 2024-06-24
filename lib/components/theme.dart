@@ -21,8 +21,9 @@ class ThemesApp {
     brightness: Brightness.light,
   );
 
-  static final dark = ThemeData(
-    primaryColor: darkGreyClr,
-    backgroundColor: darkGreyClr,
-    brightness: Brightness.dark,
-  );}
+// static final dark = ThemeData(
+//   primaryColor: darkGreyClr,
+//   backgroundColor: darkGreyClr,
+//   brightness: Brightness.dark,
+// );
+}
