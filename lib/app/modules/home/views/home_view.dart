@@ -9,6 +9,7 @@ import '../../../../components/home_components/search_form_text.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
+
   const HomeView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

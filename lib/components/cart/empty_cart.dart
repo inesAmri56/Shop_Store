@@ -58,7 +58,7 @@ class EmptyCart extends StatelessWidget {
           SizedBox(
             height: 50,
             child: ElevatedButton(onPressed: ()
-            {Get.to(MainscreenView);},
+            {Get.to(MainscreenView());},
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),

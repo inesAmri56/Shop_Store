@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 
+import '../data/models/product_models.dart';
 import '../modules/cartScreen/bindings/cart_screen_binding.dart';
 import '../modules/cartScreen/views/cart_screen_view.dart';
 import '../modules/category/bindings/category_binding.dart';
@@ -83,8 +84,9 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CART_SCREEN,
-      page: () => const CartScreenView(),
+      page: () => CartScreenView(),
       binding: CartScreenBinding(),
     ),
+
   ];
 }

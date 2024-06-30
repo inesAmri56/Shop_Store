@@ -9,7 +9,7 @@ class ProductModels {
   String title;
   double price;
   String description;
-  Category category;
+  Category ? category;
   String image;
   Rating rating;
 
