@@ -18,6 +18,7 @@ debugShowCheckedModeBanner: false,
       //themeMode: ThemeController().ThemeDataGet,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+
     ),
   );
 }

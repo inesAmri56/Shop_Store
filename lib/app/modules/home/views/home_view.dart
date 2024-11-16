@@ -26,10 +26,10 @@ class HomeView extends GetView<HomeController> {
                   bottomLeft:Radius.circular(20),
                 bottomRight:Radius.circular(20),
               )
-               
+
             ),
             child: Padding(
-              padding: const EdgeInsets.all(20),
+              padding:  EdgeInsets.all(15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

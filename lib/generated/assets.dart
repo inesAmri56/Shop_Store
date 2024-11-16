@@ -20,6 +20,7 @@ class Assets {
   static const String imagesRate = 'assets/images/rate.png';
   static const String imagesSearchEmpryLight = 'assets/images/search_empry_light.png';
   static const String imagesSearchEmptyDark = 'assets/images/search_empty_dark.png';
+  static const String imagesSearchagain = 'assets/images/searchagain.jpg';
   static const String imagesShop = 'assets/images/shop.png';
   static const String imagesUser = 'assets/images/user.png';
 

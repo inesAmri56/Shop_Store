@@ -16,8 +16,8 @@ class CardItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      final ProductController controllerProduct =Get.put(ProductController());
-      if (controllerProduct.isLoading.value) {
+
+      if (controller.isLoading.value) {
         return Center(
           child: CircularProgressIndicator(
             color: Get.isDarkMode ? pinkClr : mainColor,
@@ -25,8 +25,11 @@ class CardItems extends StatelessWidget {
         );
       } else {
         return Expanded(
-          child: GridView.builder(
-            itemCount: controller.productList.length,
+          child: controller.searchList.isEmpty && controller.searchTextController.text.isNotEmpty?
+              Image.asset("assets/images/searchagain.jpg"):
+          GridView.builder(
+            itemCount: controller.searchList.isNotEmpty?controller.searchList.length
+                :controller.productList.length,
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               childAspectRatio: 0.8,
               mainAxisSpacing: 9.0,
@@ -34,19 +37,35 @@ class CardItems extends StatelessWidget {
               maxCrossAxisExtent: 200,
             ),
             itemBuilder: (context, index) {
-              return BuildCardItems(
-                image: controller.productList[index].image,
-                price: controller.productList[index].price,
-                rate: controller.productList[index].rating.rate,
-                productId: controller.productList[index].id,
-                productModels: controller.productList[index],
-                onTap: (){
-                  Get.to(ProductDetailsView(productModels:controller.productList[index])
-                  );
-                }
+              if(controller.searchList.isNotEmpty){
+                return BuildCardItems(
+                    image: controller.searchList[index].image,
+                    price: controller.searchList[index].price,
+                    rate: controller.searchList[index].rating.rate,
+                    productId: controller.searchList[index].id,
+                    productModels: controller.searchList[index],
+                    onTap: (){
+                      Get.to(ProductDetailsView(productModels:controller.searchList[index])
+                      );
+                    }
+
+                );
+              }else{
+                return BuildCardItems(
+                    image: controller.productList[index].image,
+                    price: controller.productList[index].price,
+                    rate: controller.productList[index].rating.rate,
+                    productId: controller.productList[index].id,
+                    productModels: controller.productList[index],
+                    onTap: (){
+                      Get.to(ProductDetailsView(productModels:controller.productList[index])
+                      );
+                    }
 
 
-              );
+                );
+              }
+
             },
           ),
         );
@@ -115,14 +134,16 @@ Widget BuildCardItems({
               ],
             )),
             //Container de l'image
-            Container(
-              width: double.infinity,
-              height: 140,
-              decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              child: Image.network(
-                image,
-                fit: BoxFit.fitHeight,
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                height: 140,
+                decoration: BoxDecoration(
+                    color: Colors.white, borderRadius: BorderRadius.circular(10)),
+                child: Image.network(
+                  image,
+                  fit: BoxFit.fitHeight,
+                ),
               ),
             ),
             Padding(
