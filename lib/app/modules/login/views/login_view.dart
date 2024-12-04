@@ -71,38 +71,36 @@ class LoginView extends GetView<LoginController> {
                           controller: controller.email,
                           obscuredText: false,
                           validator: (value) {
-                            if (!RegExp(validationEmail).hasMatch(value)) {
+                            if (!RegExp(validationEmail).hasMatch(value!)) {
                               return "Invalid Email";
                             } else return null;
                           },
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/email.png')
-                              : Icon(Icons.email, color: mainColor, size: 30),
+                          prefixIcon: Icon(Icons.email, color: mainColor, size: 30),
                           suffixIcon: Text(""),
-                          hintText: "Email",
+                          hintText: "Email".tr,
                         ),
                         SizedBox(height: 20),
                         GetBuilder<LoginController>(builder: (_) {
                           return AuthTextFromField(
                             controller: controller.password,
-                            obscuredText: !controller.isVisibility ? false: true, // Use controller.isVisibility.value
+                            obscuredText: controller.isVisibility ? false: true,
                             validator: (value) {
                               if (value.toString().length < 6) {
-                                return "Password should be longer or equal to 6 characters";
+                                return "Password should be longer or equal to 6 characters".tr;
                               } else return null;
                             },
-                            prefixIcon: Get.isDarkMode
-                                ? Image.asset('assets/images/lock.png')
-                                : Icon(Icons.lock, color: mainColor, size: 30),
+                            prefixIcon:
+
+                                Icon(Icons.lock, color: mainColor, size: 30),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 controller.visibility();
                               },
                               icon: controller.isVisibility
-                                  ? Icon(Icons.visibility_off, color: Colors.black)
-                                  : Icon(Icons.visibility, color: Colors.black),
+                                  ? Icon(Icons.visibility, color: Colors.black)
+                                  :Icon(Icons.visibility_off, color: Colors.black),
                             ),
-                            hintText: "Password",
+                            hintText: "password".tr,
                           );
                         }),
                         SizedBox(height: 20),
@@ -113,7 +111,7 @@ class LoginView extends GetView<LoginController> {
                               onPressed: (){
                                 Get.to(ForgetPasswordView());
                               },
-                              child: TextUtils(text: "Forgot Password?", fontSize: 14,
+                              child: TextUtils(text: "Forgot Password?".tr, fontSize: 14,
                                   fontWeight: FontWeight.normal,
                                   color:Colors.black,
                                   //Get.isDarkMode?Colors.black: Colors.white,
@@ -126,7 +124,7 @@ class LoginView extends GetView<LoginController> {
                         const SizedBox(height: 20),
                         AuthButton(onPressed: () {
                           Get.off(MainscreenView());
-                        }, text: "Log In"),
+                        }, text: "Log In".tr),
                         SizedBox(height: 30,),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -156,8 +154,8 @@ class LoginView extends GetView<LoginController> {
 
               Center(
                 child: ContainerUnder(
-                  text: "Don't have an Account?",
-                  textType: "log In",
+                  text: "Don't have an Account?".tr,
+                  textType: "Sign Up".tr,
                   onPressed: () {
                     Get.to(SignupView());
                   },

@@ -23,10 +23,11 @@ class SignupView extends GetView<SignupController> {
       child: Scaffold(
 
         appBar: AppBar(
-          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          // backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+          backgroundColor:Colors.white,
           elevation: 0,
         ),
-        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -63,13 +64,11 @@ class SignupView extends GetView<SignupController> {
                           controller: controller.name,
                           obscuredText: false,
                           validator: (value) {
-                            if (value.toString().length <= 4 || RegExp(validationName).hasMatch(value)) {
+                            if (value.toString().length <= 4 || RegExp(validationName).hasMatch(value!)) {
                               return "Enter valid Name";
                             } else return null;
                           },
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/user.png')
-                              : Icon(Icons.person, color: pinkClr, size: 30),
+                          prefixIcon:  Icon(Icons.person, color: mainColor, size: 30),
                           suffixIcon: Text(""),
                           hintText: "Username",
                         ),
@@ -78,13 +77,11 @@ class SignupView extends GetView<SignupController> {
                           controller: controller.email,
                           obscuredText: false,
                           validator: (value) {
-                            if (!RegExp(validationEmail).hasMatch(value)) {
+                            if (!RegExp(validationEmail).hasMatch(value!)) {
                               return "Invalid Email";
                             } else return null;
                           },
-                          prefixIcon: Get.isDarkMode
-                              ? Image.asset('assets/images/email.png')
-                              : Icon(Icons.email, color: pinkClr, size: 30),
+                          prefixIcon: Icon(Icons.email, color: mainColor, size: 30),
                           suffixIcon: Text(""),
                           hintText: "Email",
                         ),
@@ -92,7 +89,7 @@ class SignupView extends GetView<SignupController> {
                         GetBuilder<SignupController>(builder: (_) {
                           return AuthTextFromField(
                             controller: controller.password,
-                            obscuredText: !controller.isVisibility ? false: true, // Use controller.isVisibility.value
+                            obscuredText: controller.isVisibility ? false: true,
                             validator: (value) {
                               if (value.toString().length < 6) {
                                 return "Password should be longer or equal to 6 characters";
@@ -100,9 +97,8 @@ class SignupView extends GetView<SignupController> {
                                 return null;
                               }
                             },
-                            prefixIcon: Get.isDarkMode
-                                ? Image.asset('assets/images/lock.png')
-                                : Icon(Icons.lock, color: pinkClr, size: 30),
+                            prefixIcon:
+                                 Icon(Icons.lock, color: mainColor, size: 30),
                             suffixIcon: IconButton(
                               onPressed: () {
                                 controller.visibility();

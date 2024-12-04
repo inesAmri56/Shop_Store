@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop_store/app/modules/signup/controllers/signup_controller.dart';
 
 class AuthTextFromField extends StatelessWidget {
   final RxString controller;
   final bool obscuredText;
-  final Function validator;
+  final String? Function(String?) validator;
   final Widget prefixIcon;
   final Widget suffixIcon;
   final String hintText;
@@ -26,11 +25,16 @@ class AuthTextFromField extends StatelessWidget {
     return TextFormField(
       obscureText: obscuredText,
       cursorColor: Colors.black,
+      style: TextStyle(
+        color: Colors.black,
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
       keyboardType: TextInputType.text,
       onChanged: (value) {
         controller.value = value;
       },
-      validator: (value) => validator(value),
+      validator: validator,
       decoration: InputDecoration(
         fillColor: Colors.grey.shade200,
         prefixIcon: prefixIcon,
@@ -56,13 +60,13 @@ class AuthTextFromField extends StatelessWidget {
         ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: Colors.red,
           ),
           borderRadius: BorderRadius.circular(10),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: Colors.white,
+            color: Colors.red,
           ),
           borderRadius: BorderRadius.circular(10),
         ),

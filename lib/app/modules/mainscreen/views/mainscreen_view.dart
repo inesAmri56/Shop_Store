@@ -17,7 +17,7 @@ class MainscreenView extends GetView<MainscreenController> {
     return SafeArea(
       child: Obx(() {
         return Scaffold(
-          backgroundColor: context.theme.backgroundColor,
+         
           appBar: AppBar(
             elevation: 0,
             leading: Container(),

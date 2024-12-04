@@ -78,21 +78,21 @@ class WelcomeView extends GetView<WelcomeController> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextUtils(
-                            text: "Shop",
+                            text: "Nousa",
                             fontSize: 35,
                             fontWeight: FontWeight.bold,
                             color: mainColor,
                             underline: TextDecoration.none,
                           ),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          TextUtils(
-                            text: "Store",
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            underline: TextDecoration.none,
+
+                          Expanded(
+                            child: TextUtils(
+                              text: "Store",
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              underline: TextDecoration.none,
+                            ),
                           ),
                         ],
                       ),

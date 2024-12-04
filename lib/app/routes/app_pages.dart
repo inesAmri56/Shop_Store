@@ -15,6 +15,8 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/mainscreen/bindings/mainscreen_binding.dart';
 import '../modules/mainscreen/views/mainscreen_view.dart';
+import '../modules/payment/bindings/payment_binding.dart';
+import '../modules/payment/views/payment_view.dart';
 import '../modules/product/bindings/product_binding.dart';
 import '../modules/product/views/product_view.dart';
 import '../modules/settings/bindings/settings_binding.dart';
@@ -23,6 +25,8 @@ import '../modules/settings/views/settings_view.dart';
 import '../modules/settings/views/settings_view.dart';
 import '../modules/signup/bindings/signup_binding.dart';
 import '../modules/signup/views/signup_view.dart';
+import '../modules/splashScreen/bindings/splash_screen_binding.dart';
+import '../modules/splashScreen/views/splash_screen_view.dart';
 import '../modules/welcome/bindings/welcome_binding.dart';
 import '../modules/welcome/views/welcome_view.dart';
 
@@ -31,10 +35,16 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.WELCOME;
+  static const INITIAL = Routes.SPLASH_SCREEN;
 
   static final routes = [
     GetPage(
+      name: _Paths.WELCOME,
+      page: () => WelcomeView(),
+      binding: WelcomeBinding(),
+    ),
+    GetPage(
+
       name: _Paths.HOME,
       page: () => HomeView(),
       binding: HomeBinding(),
@@ -44,11 +54,7 @@ class AppPages {
       page: () => LoginView(),
       binding: LoginBinding(),
     ),
-    GetPage(
-      name: _Paths.WELCOME,
-      page: () => WelcomeView(),
-      binding: WelcomeBinding(),
-    ),
+
     GetPage(
       name: _Paths.SIGNUP,
       page: () => SignupView(),
@@ -95,6 +101,16 @@ class AppPages {
       name: _Paths.CART_SCREEN,
       page: () => CartScreenView(),
       binding: CartScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAYMENT,
+      page: () => const PaymentView(),
+      binding: PaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH_SCREEN,
+      page: () => const SplashScreenView(),
+      binding: SplashScreenBinding(),
     ),
   ];
 }

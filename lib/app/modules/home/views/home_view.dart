@@ -14,7 +14,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      backgroundColor: context.theme.backgroundColor,
+
       body: Column(
         children: [
           Container(

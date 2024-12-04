@@ -19,7 +19,7 @@ class CartTotal extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const TextUtils(text: "Total",
+                TextUtils(text: "Total".tr,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.grey,
@@ -51,7 +51,9 @@ class CartTotal extends StatelessWidget {
                       elevation: 0,
                       primary: Get.isDarkMode ? pinkClr : mainColor,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed('/payment');
+                    },
 
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
